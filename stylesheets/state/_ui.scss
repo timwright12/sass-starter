@@ -1,0 +1,19 @@
+.is-hidden {
+    @include move-off-screen();
+}
+
+is-removed {
+    display: none;
+}
+
+.is-showing {
+    display: block;
+}
+
+.is-collapsed {
+    
+}
+
+.is-expanded {
+    
+}
