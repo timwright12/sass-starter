@@ -30,7 +30,7 @@ summary {
 audio,
 canvas,
 video {
-    display: inline-block;
+    @include inline-block();
 }
 
 /**
@@ -140,8 +140,7 @@ dfn {
  */
 
 hr {
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
+    @include box-sizing(content-box);
     height: 0;
 }
 
@@ -335,7 +334,7 @@ html input[disabled] {
 
 input[type="checkbox"],
 input[type="radio"] {
-    box-sizing: border-box; /* 1 */
+    @include box-sizing(border-box);
     padding: 0; /* 2 */
 }
 
@@ -347,9 +346,7 @@ input[type="radio"] {
 
 input[type="search"] {
     -webkit-appearance: textfield; /* 1 */
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box; /* 2 */
-    box-sizing: content-box;
+    @include box-sizing(content-box);
 }
 
 /**
