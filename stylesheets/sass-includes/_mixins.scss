@@ -97,3 +97,8 @@
     background: -ms-linear-gradient(left,  $white 0%,#1c7bbd $left,#1c7bbd $right,$white 100%);
     background: linear-gradient(to right,  $white 0%,#1c7bbd $left,#1c7bbd $right,$white 100%);
 }
+ 
+@mixin vector-bg-with-fallback($name) {
+  background-image: url('#{$public_path}images/#{$name}.png');
+  background-image: none, url('#{$public_path}images/#{$name}.svg');
+}
