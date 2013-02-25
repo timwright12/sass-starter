@@ -1,10 +1,10 @@
-@mixin move-off-screen() {
+@mixin move-off-screen () {
     position: absolute;
     top: 0;
     left: 0;
 }
 
-@mixin inline-block() {
+@mixin inline-block () {
   display: inline-block;
   vertical-align: baseline;
   zoom: 1;
@@ -12,7 +12,7 @@
   *vertical-align: auto;
 }
 
-@mixin clearfix {
+@mixin clearfix () {
   *zoom: 1;
   
   &:before, &:after {
@@ -25,17 +25,17 @@
   }
 }
 
-@mixin replace-text(){
+@mixin replace-text () {
     text-indent: -9999px;
     overflow: hidden;
 }
 
-@mixin add-depth ($borderColor, $opacityLevel) {
+@mixin add-depth ( $borderColor, $opacityLevel ) {
     box-shadow: inset 0px 1px 2px rgba(255, 255, 255, $opacityLevel);
     border: 1px solid $borderColor;
 }
 
-@mixin font-face($font-family, $file-path, $font-weight, $font-style) {
+@mixin font-face ( $font-family, $file-path, $font-weight, $font-style ) {
   @font-face {
     font-family: $font-family;
       src: url('#{$file-path}.eot');
@@ -48,7 +48,7 @@
   }
 }
 
-@mixin border-radius ($values) {
+@mixin border-radius ( $values ) {
     -webkit-border-radius: $values;
        -moz-border-radius: $values;
             border-radius: $values;
@@ -57,25 +57,25 @@
             background-clip: padding-box;
 }
 
-@mixin box-shadow ($values) {
+@mixin box-shadow ( $values ) {
     -webkit-box-shadow: $values;
        -moz-box-shadow: $values;
             box-shadow: $values;
 }
 
-@mixin box-sizing($values) {
+@mixin box-sizing ( $values ) {
     -webkit-box-sizing: $values;
        -moz-box-sizing: $values;
             box-sizing: $values;
 }
 
-@mixin text-rendering ($string) {
+@mixin text-rendering ( $string ) {
     -webkit-text-rendering: $string;
        -moz-text-rendering: $string;
             text-rendering: $string;
 }
 
-@mixin transform ($values) {
+@mixin transform ( $values ) {
     -webkit-transform: $values;
        -moz-transform: $values;
         -ms-transform: $values;
@@ -83,7 +83,7 @@
             transform: $values;
 }
 
-@mixin transition ($values) {
+@mixin transition ( $values ) {
     -webkit-transition: $values;
        -moz-transition: $values;
         -ms-transition: $values;
@@ -91,7 +91,7 @@
             transition: $values;
 }
 
-@mixin gradient-linear ($start, $end) {
+@mixin gradient-linear ( $start, $end ) {
     background: $start;
     background: -moz-linear-gradient(top,  $start 0%, $end 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start), color-stop(100%,$end));
@@ -101,7 +101,7 @@
     background: linear-gradient(to bottom,  $start 0%,$end 100%);
 }
 
-@mixin gradient-linear-horizontal ($white, $left, $right) {
+@mixin gradient-linear-horizontal ( $white, $left, $right ) {
     background: #1c7bbd;
     background: -moz-linear-gradient(left, $white 0%, #1c7bbd $left, #1c7bbd $right, $white 100%);
     background: -webkit-gradient(linear, left top, right top, color-stop(0%,$white), color-stop($left,#1c7bbd), color-stop($right,#1c7bbd), color-stop(100%,$white));
@@ -111,7 +111,7 @@
     background: linear-gradient(to right,  $white 0%,#1c7bbd $left,#1c7bbd $right,$white 100%);
 }
  
-@mixin vector-bg-with-fallback($name) {
+@mixin vector-bg-with-fallback ( $name ) {
   background-image: url('#{$public_path}images/#{$name}.png');
   background-image: none, url('#{$public_path}images/#{$name}.svg');
 }
