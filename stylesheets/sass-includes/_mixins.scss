@@ -1,8 +1,25 @@
+/*
+    Move element off screen
+*/
+
 @mixin move-off-screen () {
     position: absolute;
     top: 0;
     left: 0;
 }
+
+/*
+    Move text off screen 
+*/
+
+@mixin replace-text () {
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+/*
+    Fix inline-block cross browser
+*/
 
 @mixin inline-block () {
   display: inline-block;
@@ -11,6 +28,10 @@
   *display: inline;
   *vertical-align: auto;
 }
+
+/*
+    New hotness clearfix
+*/
 
 @mixin clearfix () {
   *zoom: 1;
@@ -25,15 +46,26 @@
   }
 }
 
-@mixin replace-text () {
-    text-indent: -9999px;
-    overflow: hidden;
-}
+/*
+    Add some depth to an element
+*/
 
 @mixin add-depth ( $borderColor, $opacityLevel ) {
     box-shadow: inset 0px 1px 2px rgba(255, 255, 255, $opacityLevel);
     border: 1px solid $borderColor;
 }
+
+/*
+    Convert pixels to ems
+*/
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}
+
+/*
+    Easy font-face
+*/
 
 @mixin font-face ( $font-family, $file-path, $font-weight, $font-style ) {
   @font-face {
@@ -47,6 +79,19 @@
     font-style: $font-style;
   }
 }
+
+/*
+    Vector image with a PNG fallback
+*/
+
+@mixin vector-bg-with-fallback ( $name ) {
+    background-image: url('#{$public_path}images/#{$name}.png');
+    background-image: none, url('#{$public_path}images/#{$name}.svg');
+}
+
+/*
+    Vendor prefix'd helpers
+*/
 
 @mixin border-radius ( $values ) {
     -webkit-border-radius: $values;
@@ -109,9 +154,4 @@
     background: -o-linear-gradient(left,  $white 0%,#1c7bbd $left,#1c7bbd $right,$white 100%);
     background: -ms-linear-gradient(left,  $white 0%,#1c7bbd $left,#1c7bbd $right,$white 100%);
     background: linear-gradient(to right,  $white 0%,#1c7bbd $left,#1c7bbd $right,$white 100%);
-}
- 
-@mixin vector-bg-with-fallback ( $name ) {
-  background-image: url('#{$public_path}images/#{$name}.png');
-  background-image: none, url('#{$public_path}images/#{$name}.svg');
 }
