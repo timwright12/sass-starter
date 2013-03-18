@@ -2,9 +2,9 @@
     Sass template
 */
 
-@import "sass-includes/sass-includes.scss";
-@import "base/base.scss";
-@import "layout/layout.scss";
-@import "module/module.scss";
-@import "state/state.scss";
-@import "theme/theme.scss";
+@import "sass-includes/_inc-sass-includes.scss";
+@import "base/_inc-base.scss";
+@import "layout/_inc-layout.scss";
+@import "module/_inc-module.scss";
+@import "state/_inc-state.scss";
+@import "theme/_inc-theme.scss";
